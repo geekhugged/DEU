@@ -1,37 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DEU</title>
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      max-width: 720px;
-      margin: 4rem auto;
-      padding: 0 1.5rem;
-      line-height: 1.6;
-      color: #1a1a1a;
-    }
-    h1 {
-      font-size: 2.25rem;
-      margin-bottom: 0.25rem;
-    }
-    p {
-      color: #4a4a4a;
-    }
-    footer {
-      margin-top: 3rem;
-      font-size: 0.85rem;
-      color: #888;
-    }
-  </style>
+  <title>DEU — Deutsch lernen</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <h1>DEU</h1>
-  <p>Welcome to the GitHub Pages site for the DEU project.</p>
-  <footer>
-    <p>Hosted with GitHub Pages.</p>
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a class="brand" href="index.html">DEU</a>
+      <nav>
+        <a href="#lessons">Уроки</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>Deutsch lernen.</h1>
+    <p>Тексты, лексика, грамматика и упражнения — урок за уроком.</p>
+  </section>
+
+  <section class="section" id="lessons">
+    <div class="grid">
+      <a class="card" href="lessons/lesson-1.html">
+        <h3>Lektion 1</h3>
+        <p>Текст, лексика, грамматика, упражнения</p>
+      </a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>DEU · сделано для изучения немецкого языка</p>
   </footer>
 </body>
 </html>

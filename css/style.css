@@ -1,0 +1,294 @@
+:root {
+  --bg: #ffffff;
+  --fg: #1d1d1f;
+  --muted: #6e6e73;
+  --accent: #0071e3;
+  --accent-hover: #0077ed;
+  --card-bg: #f5f5f7;
+  --border: #d2d2d7;
+  --radius: 18px;
+  --max-width: 980px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { color: var(--accent-hover); }
+
+/* Navigation */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: saturate(180%) blur(20px);
+  background: rgba(255, 255, 255, 0.8);
+  border-bottom: 1px solid var(--border);
+}
+.navbar-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 22px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.brand {
+  font-weight: 600;
+  font-size: 17px;
+  color: var(--fg);
+  letter-spacing: -0.01em;
+}
+.brand:hover { color: var(--fg); }
+.navbar nav a {
+  font-size: 13px;
+  color: var(--fg);
+  margin-left: 26px;
+}
+.navbar nav a:hover { color: var(--muted); }
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 96px 22px 64px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+.hero h1 {
+  font-size: clamp(40px, 7vw, 64px);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  margin: 0 0 12px;
+}
+.hero p {
+  font-size: clamp(18px, 2.4vw, 24px);
+  color: var(--muted);
+  margin: 0;
+}
+
+/* Lesson grid */
+.section {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 24px 22px 96px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+.card {
+  display: block;
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+.card h3 {
+  margin: 0 0 6px;
+  font-size: 21px;
+  font-weight: 600;
+  color: var(--fg);
+  letter-spacing: -0.01em;
+}
+.card p {
+  margin: 0;
+  font-size: 15px;
+  color: var(--muted);
+}
+
+/* Lesson page */
+.lesson-header {
+  text-align: center;
+  padding: 64px 22px 32px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+.lesson-header h1 {
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  margin: 0 0 8px;
+}
+.lesson-header p {
+  color: var(--muted);
+  font-size: 17px;
+  margin: 0;
+}
+
+/* Tabs */
+.tabs {
+  position: sticky;
+  top: 49px;
+  z-index: 90;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+.tabs-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  gap: 4px;
+  padding: 8px 22px;
+  overflow-x: auto;
+}
+.tab-btn {
+  appearance: none;
+  border: none;
+  background: transparent;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--muted);
+  padding: 8px 18px;
+  border-radius: 980px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s ease, color 0.15s ease;
+  font-family: inherit;
+}
+.tab-btn:hover { color: var(--fg); }
+.tab-btn.active {
+  background: var(--fg);
+  color: #fff;
+}
+
+.tab-panel {
+  display: none;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 48px 22px 96px;
+}
+.tab-panel.active { display: block; }
+
+/* Text block */
+.text-block {
+  font-size: 19px;
+  line-height: 1.75;
+  white-space: pre-wrap;
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 36px 40px;
+}
+.text-block p { margin: 0 0 1.2em; }
+.text-block p:last-child { margin-bottom: 0; }
+
+/* Vocabulary */
+.vocab-group h2 {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 40px 0 16px;
+}
+.vocab-group:first-child h2 { margin-top: 0; }
+.vocab-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+}
+.vocab-table th {
+  text-align: left;
+  font-weight: 600;
+  color: var(--muted);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--border);
+}
+.vocab-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+.vocab-table tr:last-child td { border-bottom: none; }
+.word-de { font-weight: 600; }
+.tag {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  background: rgba(0, 113, 227, 0.1);
+  border-radius: 6px;
+  padding: 2px 8px;
+  margin-right: 6px;
+}
+
+/* Grammar */
+.grammar-card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 28px 32px;
+  margin-bottom: 20px;
+}
+.grammar-card h3 {
+  margin: 0 0 8px;
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.grammar-card p { color: var(--muted); margin: 0 0 14px; }
+.example-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.example-list li {
+  font-size: 16px;
+  padding: 10px 0;
+  border-top: 1px solid var(--border);
+}
+.example-list li:first-child { border-top: none; }
+.example-de { font-weight: 600; }
+.example-ru { color: var(--muted); display: block; margin-top: 2px; }
+
+/* Exercises */
+.exercise {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 24px 28px;
+  margin-bottom: 16px;
+}
+.exercise h3 {
+  margin: 0 0 12px;
+  font-size: 17px;
+  font-weight: 600;
+}
+.exercise ol, .exercise ul {
+  margin: 0;
+  padding-left: 22px;
+}
+.exercise li { margin-bottom: 8px; font-size: 16px; }
+
+/* Footer */
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 28px 22px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* Empty state */
+.empty {
+  text-align: center;
+  color: var(--muted);
+  font-size: 17px;
+  padding: 64px 22px;
+}
